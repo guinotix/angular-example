@@ -35,4 +35,9 @@ export class HeroesComponent {
       });
   }
 
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(theHero => theHero !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
+  }
+
 }
