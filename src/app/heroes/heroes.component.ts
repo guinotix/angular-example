@@ -25,8 +25,10 @@ export class HeroesComponent {
     this.selectedHero = hero;
   }
 
+  // La funcion subscribe coge el valor de retorno del observable
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 
 }
