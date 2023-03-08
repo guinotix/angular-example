@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from '../interfaces/hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -8,9 +9,6 @@ import { Hero } from '../interfaces/hero';
 })
 export class HeroesComponent {
 
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  heroes = HEROES;
 
 }
