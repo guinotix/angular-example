@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
+import { MessageService } from './message.service';
+
 import { Hero } from '../interfaces/hero';
 import { HEROES } from '../mock-heroes';
 
@@ -10,9 +12,10 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroService {
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   getHeroes(): Observable<Hero[]> {
+    this.messageService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
 
